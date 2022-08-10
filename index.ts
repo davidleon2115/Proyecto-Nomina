@@ -1,8 +1,8 @@
 console.log('oli');
 
 class Persona{
-    private nombre:string;
-    private edad:number;
+    protected nombre:string;
+    protected edad:number;
     constructor(nombre:string, edad:number){
         this.nombre = nombre;
         this.edad = edad;
@@ -20,6 +20,9 @@ class Empleados extends Persona{
     }
     getSueldo(){
         return this.sueldo;
+    }
+    getDevengado(){
+        return this.GetInfo() + ' ' + this.getSueldo();
     }
 }
 
@@ -44,7 +47,7 @@ class Jefe{
 const Persona1 = new Persona('Juan', 18);
 console.log(Persona1.GetInfo());
 const Empleado1 = new Empleados(15000, 'Juan Daniel', 18);
-console.log(Empleado1.GetInfo());
-console.log(Empleado1.getSueldo());
+console.log(Empleado1.getDevengado());
+console.log('Resultados de la clase Jefe');
 const Boss = new Jefe('Juan', 19, 'Senior');
 console.log(Boss.getStatus());
