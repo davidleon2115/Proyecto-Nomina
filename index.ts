@@ -25,14 +25,20 @@ class Empleados extends Persona{
 
 
 // Ejemplo de colaboración
-class Jefe extends Persona{
-    public informacion:object;
-
-    constructor(nombre:string, edad:number){
-        super(nombre,edad);
-        this.informacion = new Persona(nombre, edad);
+class Jefe{
+    private informacion:string;
+    private nombre :string;
+    private cargo:string;
+    private edad:number;
+    constructor(nombre:string,edad:number, cargo:string){
+        this.nombre = nombre;
+        this.cargo = cargo;
+        this.edad = edad;
+        this.informacion = new Persona(this.nombre, this.edad).GetInfo();
     }
-
+    getStatus(){
+        return this.informacion + ' '+ this.cargo;
+    }
 
 }
 const Persona1 = new Persona('Juan', 18);
@@ -40,5 +46,5 @@ console.log(Persona1.GetInfo());
 const Empleado1 = new Empleados(15000, 'Juan Daniel', 18);
 console.log(Empleado1.GetInfo());
 console.log(Empleado1.getSueldo());
-const Boss = new Jefe('Juan', 19);
-console.log(Boss.GetInfo());
+const Boss = new Jefe('Juan', 19, 'Senior');
+console.log(Boss.getStatus());
