@@ -1,4 +1,5 @@
 import express from 'express' //@types/express and definetelytyped
+import controller from './controllers/controller'
 const app = express()
 app.use(express.json())
 
@@ -6,7 +7,7 @@ const PORT = 3000
 
 app.get('/ping',(_,res)=>{
     console.log('oli')
-    res.send('pong')
+    res.send(controller.getAll());
 })
 
 app.get('/oli',(_,res)=>{
