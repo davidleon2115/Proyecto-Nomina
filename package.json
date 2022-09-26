@@ -4,15 +4,14 @@
   "description": "Proyecto nomina",
   "main": "index.js",
   "scripts": {
-    "start": "node build/index.js",
     "tsc": "tsc",
-    "proyect": "ts-node index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.ts"
   },
   "author": "David Leon y Daniel Olaya",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "4.17.13",
+    "nodemon": "^2.0.20",
     "ts-node": "10.9.1",
     "typescript": "4.7.4"
   },
